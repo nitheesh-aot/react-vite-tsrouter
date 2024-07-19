@@ -141,3 +141,4 @@ scaffold-api/.DS_Store
 .vscode/chrome
 
 .idea
+node_modules
