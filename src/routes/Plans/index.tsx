@@ -14,7 +14,7 @@ import { AxiosResponse } from "axios";
 import { Plan } from "@/models/Plan";
 import { Link } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/plans/")({
+export const Route = createFileRoute("/Plans/")({
   component: PlanListPage,
 });
 
@@ -51,7 +51,7 @@ function PlanListPage() {
               >
                 <TableCell component="th" scope="row">
                   <Link
-                    to={`/plans/$planId`}
+                    to={"/Plans/$planId"}
                     params={{ planId: `${row.id}` }}
                   >
                     {row.name}

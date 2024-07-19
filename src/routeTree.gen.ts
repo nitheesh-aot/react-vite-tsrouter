@@ -17,8 +17,8 @@ import { Route as OidcCallbackImport } from './routes/oidc-callback'
 import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
 import { Route as UsersIndexImport } from './routes/users/index'
-import { Route as PlansIndexImport } from './routes/plans/index'
-import { Route as PlansPlanIdImport } from './routes/plans/$planId'
+import { Route as PlansIndexImport } from './routes/Plans/index'
+import { Route as PlansPlanIdImport } from './routes/Plans/$planId'
 
 // Create Virtual Routes
 
@@ -52,12 +52,12 @@ const UsersIndexRoute = UsersIndexImport.update({
 } as any)
 
 const PlansIndexRoute = PlansIndexImport.update({
-  path: '/plans/',
+  path: '/Plans/',
   getParentRoute: () => rootRoute,
 } as any)
 
 const PlansPlanIdRoute = PlansPlanIdImport.update({
-  path: '/plans/$planId',
+  path: '/Plans/$planId',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -93,17 +93,17 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NewpageLazyImport
       parentRoute: typeof rootRoute
     }
-    '/plans/$planId': {
-      id: '/plans/$planId'
-      path: '/plans/$planId'
-      fullPath: '/plans/$planId'
+    '/Plans/$planId': {
+      id: '/Plans/$planId'
+      path: '/Plans/$planId'
+      fullPath: '/Plans/$planId'
       preLoaderRoute: typeof PlansPlanIdImport
       parentRoute: typeof rootRoute
     }
-    '/plans/': {
-      id: '/plans/'
-      path: '/plans'
-      fullPath: '/plans'
+    '/Plans/': {
+      id: '/Plans/'
+      path: '/Plans'
+      fullPath: '/Plans'
       preLoaderRoute: typeof PlansIndexImport
       parentRoute: typeof rootRoute
     }
@@ -141,8 +141,8 @@ export const routeTree = rootRoute.addChildren({
         "/about",
         "/oidc-callback",
         "/newpage",
-        "/plans/$planId",
-        "/plans/",
+        "/Plans/$planId",
+        "/Plans/",
         "/users/"
       ]
     },
@@ -158,11 +158,11 @@ export const routeTree = rootRoute.addChildren({
     "/newpage": {
       "filePath": "newpage.lazy.tsx"
     },
-    "/plans/$planId": {
-      "filePath": "plans/$planId.tsx"
+    "/Plans/$planId": {
+      "filePath": "Plans/$planId.tsx"
     },
-    "/plans/": {
-      "filePath": "plans/index.tsx"
+    "/Plans/": {
+      "filePath": "Plans/index.tsx"
     },
     "/users/": {
       "filePath": "users/index.tsx"

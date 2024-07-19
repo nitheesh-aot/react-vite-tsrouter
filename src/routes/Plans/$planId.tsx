@@ -5,7 +5,7 @@ import { Box, Button, Chip } from "@mui/material";
 import { AxiosResponse } from "axios";
 import { Link, useParams } from "@tanstack/react-router";
 
-export const Route = createFileRoute('/plans/$planId')({
+export const Route = createFileRoute('/Plans/$planId')({
   component: PlanPage,
   notFoundComponent: () => {
     return <p>Plan not found!</p>
@@ -47,7 +47,7 @@ function PlanPage() {
             <p>On {plan.submittedDate}</p>
           </div>
           <div>{isFetching ? "Background Updating..." : " "}</div>
-          <Link to={"/plans"}>
+          <Link to={"/Plans"}>
             <Button variant="outlined" color="primary">
               Go Back
             </Button>
